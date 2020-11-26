@@ -1,16 +1,16 @@
 import {addMessageActionCreator, dialogsReducer, updateNewMessageTextActionCreator} from "./dialogs-reducer";
 
-type DialogsType = {
+export type DialogsType = {
     id: number
     name: string
 }
 
-type MessagesType = {
+export type MessagesType = {
     id: number
     message: string
 }
 
-type DialogsPageType = {
+export type DialogsPageType = {
     dialogs: Array<DialogsType>
     messages: Array<MessagesType>
     newMessageText: string

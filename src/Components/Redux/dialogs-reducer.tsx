@@ -1,9 +1,9 @@
-// @ts-ignore
+import {DialogsPageType} from "./dialogs-reducer.test";
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 
-let initialState = {
+let initialState: DialogsPageType = {
     dialogs: [
         {id: 1, name: "Andrei"},
         {id: 2, name: "Bob"},
@@ -44,6 +44,4 @@ export const dialogsReducer = (state = initialState, action: any) => {
 
 }
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
-
-// @ts-ignore
-export const updateNewMessageTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
+export const updateNewMessageTextActionCreator = (text: string) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})

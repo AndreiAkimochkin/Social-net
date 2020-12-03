@@ -11,7 +11,7 @@ export const Users = (props: any) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
-   
+
 
     return (
         <div>
@@ -36,21 +36,22 @@ export const Users = (props: any) => {
                 }) => <div key={u.id}>
                 <span>
                  
-                    <NavLink to={'/Profile'+ u.id}>
+                    <NavLink to={'/Profile' + u.id}>
                     <div>
                         <img src={u.photos.small != null ? u.photos.small : UserPhoto} className={styles.userPhoto}/>
                     </div>
                         </NavLink>
                     <div>
                         {u.followed ?
-                            <button onClick={() => {
+                            <button disabled={props.followingInProgress.some((id: number) => id === u.id)}
+                                    onClick={() => {
+                                        props.unfollow(u.id);
+                                    }}>Unfollow</button> :
 
-                                props.unfollow(u.id)
-                            }}>Unfollow</button> :
-                            <button onClick={() => {
-
-                                props.follow(u.id)
-                            }}>Follow</button>}
+                            <button disabled={props.followingInProgress.some((id: number) => id === u.id)}
+                                    onClick={() => {
+                                        props.follow(u.id);
+                                    }}>Follow</button>}
 
                     </div>
                 </span>

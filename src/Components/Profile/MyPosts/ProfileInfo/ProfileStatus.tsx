@@ -26,7 +26,7 @@ export class ProfileStatus extends React.Component<any, any> {
                     <span onClick={this.activateEditMode}>{this.props.status}</span>
                 </div>
                 }
-                {this.state.editMode &&
+                {this.state.editMode &&   
                 <div>
                     <input autoFocus={true} onBlur={this.deactivateEditMode} value={this.props.status}/>
                 </div>

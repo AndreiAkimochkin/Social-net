@@ -34,6 +34,5 @@ const mapStateToProps = (state: any) => ({
 
 export default compose(
     connect(mapStateToProps, {getUsersProfile, getStatus, updateStatus}),
-        withRouter,
-      )
+        withRouter,)
     (ProfileContainer)

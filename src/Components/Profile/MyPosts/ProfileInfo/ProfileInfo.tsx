@@ -13,7 +13,7 @@ const ProfileInfo = (props:any) => {
             {/*<img src='https://picwalls.ru/img/gallery/22/thumbs/thumb_l_9666pw.jpg'/>*/}
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large} />
-                <ProfileStatus status={'Hello!'}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
             </div>
 
         </div>)

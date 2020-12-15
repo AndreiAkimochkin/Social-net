@@ -20,13 +20,29 @@ export const usersAPI = {
     },
     unfollow(userId: number) {
 
-        return instanse.delete(`follow/${userId}`, {},)
+        return instanse.delete(`follow/${userId}`, {})
     },
     getAuth() {
         return instanse.get(`auth/me`)
     },
     getProfile( userId: number) {
+        return profileAPI.getProfile( userId)
+
+    }
+}
+
+export const profileAPI = {
+
+    getProfile( userId: number) {
         return instanse.get(`profile/` + userId)
 
-        }
-   }
+    },
+
+    getStatus( userId: number) {
+        return instanse.get(`profile/status/`  + userId)
+    },
+    updateStatus(status: string | number) {
+        return instanse.put(`profile/status/`, {status} )
+    }
+}
+

@@ -1,9 +1,6 @@
 import {DialogsPageType} from "./dialogs-reducer.test";
-import {usersAPI} from "../api/api";
 
 const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
 
 let initialState: DialogsPageType = {
     dialogs: [
@@ -23,12 +20,7 @@ let initialState: DialogsPageType = {
 
 export const dialogsReducer = (state = initialState, action: any) => {
     switch (action.type) {
-        case  UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessageBody: action.body
-            }
-        }
+
         case  ADD_MESSAGE: {
             let body = action.newMessageBody;
             return {
@@ -42,4 +34,4 @@ export const dialogsReducer = (state = initialState, action: any) => {
 
 }
 export const addMessageActionCreator = (newMessageBody: string) => ({type: ADD_MESSAGE, newMessageBody})
-export const updateNewMessageTextActionCreator = (text: string) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
+

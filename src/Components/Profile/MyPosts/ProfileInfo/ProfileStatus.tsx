@@ -1,4 +1,5 @@
 import React from "react";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 
 
 export class ProfileStatus extends React.Component<any, any> {

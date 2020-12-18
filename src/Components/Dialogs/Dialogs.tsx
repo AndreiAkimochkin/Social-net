@@ -31,22 +31,13 @@ const Dialogs = (props: any) => {
 // @ts-ignore
     let messagesElements = state.messages.map(m => <DialogsItem name={m.message} id={m.id} key={m.id}/>)
 
-    let newMessageElement = React.createRef<HTMLTextAreaElement>();
-    let addMessage = () => {
-        props.addMessage();
-    }
 
     let addNewMessage = (values: MessageDataType) => {
         props.addMessage(values.newMessageBody)
-    }
+    };
 
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current?.value;
-        props.onMessageChange(text);
-    }
-
-    if (!props.isAuth) return <Redirect to ={'/Login'} />;
+      if (!props.isAuth) return <Redirect to ={'/Login'} />;
 
 
 

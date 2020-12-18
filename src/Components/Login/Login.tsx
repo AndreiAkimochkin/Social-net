@@ -1,7 +1,7 @@
 import React from "react";
 import  {Field, reduxForm, InjectedFormProps} from "redux-form";
 
-type FormDataType = {
+ type FormDataType = {
     login: string
     password: string
     rememberMe: boolean
@@ -20,7 +20,7 @@ type FormDataType = {
             </div>
             <div>
 
-                <Field type={"checkbox"}  component={'input'} name={'rememberMe'}/> remember me
+                <Field type={"checkbox"}  name={'rememberMe'} component={'input'} /> remember me
             </div>
             <div>
                 <button>Login</button>

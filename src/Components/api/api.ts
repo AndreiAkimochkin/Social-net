@@ -46,3 +46,11 @@ export const profileAPI = {
     }
 }
 
+export const authAPI = {
+    login(email: string , password:string , rememberMe:boolean) {
+        return instanse.post(`/auth/login`, {email, password, rememberMe} )
+    },
+    logout() {
+        return instanse.delete(`/auth/login`)
+    }
+}

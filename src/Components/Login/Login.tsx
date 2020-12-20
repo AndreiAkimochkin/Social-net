@@ -5,6 +5,8 @@ import {required} from "../Utils/Validators/validators";
 import {connect} from "react-redux";
 import {loginTC} from "../Redux/auth-reducer";
 import { Redirect } from "react-router-dom";
+import style from './../Common/FormsControls/FormsControls.module.css'
+import {Simulate} from "react-dom/test-utils";
 
  type FormDataType = {
     email: string
@@ -30,6 +32,9 @@ import { Redirect } from "react-router-dom";
                 <Field type={"checkbox"}  name={'rememberMe'}
                        component={Input}/> remember me
             </div>
+                  {  props.error && <div className={style.formCommonError}>
+                      {props.error}
+                  </div>}
             <div>
                 <button>Login</button>
             </div>

@@ -9,3 +9,7 @@
 {
   color: red;
 }
+
+.formCommonError {
+    border: 1px red solid;
+  }

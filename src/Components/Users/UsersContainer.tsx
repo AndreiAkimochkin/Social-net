@@ -10,7 +10,7 @@ import {
     getIsFetching,
     getPageSize,
     getTotalUsersCount,
-    getUsersSelector
+    getUsersSelector, getUsersSuper
 } from "../Redux/users-selectors";
 
 
@@ -81,7 +81,7 @@ const mapStateToProps = (state: any) => {
 
     return {
 
-        users: getUsersSelector(state),
+        users: getUsersSuper(state),
         pageSize: getPageSize(state),
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),

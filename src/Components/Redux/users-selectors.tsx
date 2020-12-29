@@ -1,6 +1,11 @@
 import React from "react";
+import {createSelector} from "reselect";
 
 export const getUsersSelector=(state: any)=> state.usersPage.users;
+
+export const getUsersSuper = createSelector(getUsersSelector, (users)=> {
+        return users.filter((u: boolean)=>true);
+});
 
 export const getPageSize=(state: any)=>state.usersPage.pageSize;
 

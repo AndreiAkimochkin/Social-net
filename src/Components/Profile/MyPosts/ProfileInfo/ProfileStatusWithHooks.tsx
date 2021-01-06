@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
 
 
@@ -6,6 +6,10 @@ export const ProfileStatusWithHooks =(props:any)=> {
 
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(props.status)
+
+    useEffect(()=> {
+        status(props.status)
+    }, [props.status])
 
     const activateEditMode =()=> {
         setEditMode(true)

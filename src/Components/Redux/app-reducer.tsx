@@ -29,11 +29,9 @@ export const appReducer = (state = initialState, action: any): initialState => {
 export const initializedSuccess= () => ({type: INITIALIZED_SUCCESS})
 
 
-export const initializeApp = () =>(dispatch: any)=> {
+export const initializeApp = () => async(dispatch: any)=> {
     const promise = dispatch(getAuthUserData())
-    Promise.all([promise]).
-        then(()=>{
-        dispatch(initializedSuccess())
-    })
+    await Promise.all([promise])
+             dispatch(initializedSuccess())
 
 };

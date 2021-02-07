@@ -15,7 +15,8 @@ let initialState: DialogsPageType = {
         {id: 1, message: "Hi, how are u"},
         {id: 2, message: "Fine "},
         {id: 3, message: "Cooolllll"},
-    ]
+    ],
+    newMessageText: ''
 }
 
 export const dialogsReducer = (state = initialState, action: any) => {

@@ -1,4 +1,4 @@
-import {addMessageActionCreator, dialogsReducer, updateNewMessageTextActionCreator} from "./dialogs-reducer";
+import {addMessageActionCreator, dialogsReducer} from "./dialogs-reducer";
 
 export type DialogsType = {
     id: number
@@ -13,6 +13,7 @@ export type MessagesType = {
 export type DialogsPageType = {
     dialogs: Array<DialogsType>
     messages: Array<MessagesType>
+    newMessageText: string
 
 
 }
@@ -32,9 +33,11 @@ test('new message should be added to messages array', () => {
             {id: 2, message: "Fine "},
             {id: 3, message: "Cooolllll"},
         ],
+        newMessageText: ''
 
     }
 
+    let newMessageText = "Hi, friends!";
     const endState = dialogsReducer(startState, addMessageActionCreator(newMessageText))
 
     expect(endState.messages.length).toBe(4);
@@ -63,7 +66,7 @@ test('new message text should be update', () => {
 
     let newMessageText = "HI";
 
-    const endState = dialogsReducer(startState, updateNewMessageTextActionCreator(newMessageText))
+    const endState = dialogsReducer(startState, addMessageActionCreator(newMessageText))
 
        expect(endState.newMessageText).toBe("HI");
 })

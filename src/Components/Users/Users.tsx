@@ -2,6 +2,7 @@ import styles from "./users.module.css";
 import React from "react";
 import UserPhoto from '../Images/user.png';
 import {NavLink} from "react-router-dom";
+import {Paginator} from "../Common/Paginator/Paginator";
 
 export const Users = (props: any) => {
 
@@ -15,6 +16,11 @@ export const Users = (props: any) => {
 
     return (
         <div>
+            {/*<Paginator currentPage={props.currentPage}*/}
+            {/*           onPageChanged={props.onPageChanged}*/}
+            {/*           totalUsersCoun={props.totalUsersCount}*/}
+            {/*           pageSize={props.pageSize}*/}
+            {/*/>*/}
             <div>
                 {pages.map(p => {
                     // @ts-ignore

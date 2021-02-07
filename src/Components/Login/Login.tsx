@@ -6,7 +6,6 @@ import {connect} from "react-redux";
 import {loginTC} from "../Redux/auth-reducer";
 import { Redirect } from "react-router-dom";
 import style from './../Common/FormsControls/FormsControls.module.css'
-import {Simulate} from "react-dom/test-utils";
 
  type FormDataType = {
     email: string
@@ -14,10 +13,10 @@ import {Simulate} from "react-dom/test-utils";
     rememberMe: boolean
 }
 
- const LoginForm:React.FC<InjectedFormProps<FormDataType>> =(props)=> {
+ const LoginForm:React.FC<InjectedFormProps<FormDataType>> =({handleSubmit, error})=> {
 
      return <div>
-              <form onSubmit={props.handleSubmit}>
+              <form onSubmit={handleSubmit}>
 
             <div>
                 <Field  placeholder={'Email'} name={'email'}
@@ -32,8 +31,8 @@ import {Simulate} from "react-dom/test-utils";
                 <Field type={"checkbox"}  name={'rememberMe'}
                        component={Input}/> remember me
             </div>
-                  {  props.error && <div className={style.formCommonError}>
-                      {props.error}
+                  {  error && <div className={style.formCommonError}>
+                      {error}
                   </div>}
             <div>
                 <button>Login</button>

@@ -9,14 +9,16 @@ type PostDataType = {
     newPostText: string
 
 }
-const MyPosts = (props: any) => {
+
+const MyPosts=React.memo((props: any)=> {
 
     // @ts-ignore
     let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} key={p.id}/>)
 
 
-    let onAddPost = (values:PostDataType ) => {
-        props.addPost( values.newPostText)}
+    let onAddPost = (values: PostDataType) => {
+        props.addPost(values.newPostText)
+    }
 
 
     return <div className={classes.posts}>
@@ -24,11 +26,11 @@ const MyPosts = (props: any) => {
             <div>
                 MyPost
             </div>
- <AddNewPostFormRedux onSubmit={onAddPost}/>
+            <AddNewPostFormRedux onSubmit={onAddPost}/>
             {postsElements}
         </div>
     </div>
-}
+})
 
 const  maxLength30 = maxLengthCreator(30)
 

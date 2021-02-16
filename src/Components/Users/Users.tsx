@@ -13,10 +13,10 @@ export const Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ..
             />
 
             {props.users.map((u:any) => <User key={u.id}
-                                user={u}
-                                followingInProgress={props.followingInProgress}
-                                unfollow={props.unfollow}
-                                follow={props.follow}/>)}
+                                              user={u}
+                                              followingInProgress={props.followingInProgress}
+                                              unfollow={props.unfollow}
+                                              follow={props.follow}/>)}
 
         </div>
     )

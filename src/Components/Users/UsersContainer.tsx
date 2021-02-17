@@ -4,7 +4,7 @@ import {follow, getUsers, setCurrentPage, toggleIsFollowingProgress, unfollow, u
 import {Users} from "./Users";
 import {Preloader} from "../Common/Preloader/Preloader";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
-import { compose } from 'redux';
+
 import {
     getCurrentPage, getFollowingInProgress,
     getIsFetching,
@@ -12,6 +12,7 @@ import {
     getTotalUsersCount,
     getUsersSelector, getUsersSuper
 } from "../Redux/users-selectors";
+import { compose } from 'redux';
 
 
 export type PropsType = {
@@ -93,7 +94,6 @@ const mapStateToProps = (state: any) => {
 }
 
 export default compose (
-
     connect(mapStateToProps, {
         follow,
         unfollow,
